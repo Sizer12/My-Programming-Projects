@@ -1,0 +1,5 @@
+0 palm
+1 fist
+2 l
+3 peace
+4 okey
