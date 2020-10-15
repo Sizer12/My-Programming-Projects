@@ -10,15 +10,16 @@ def nothing(x):
 cap = cv2.VideoCapture(1);
 path ="C:/Users/musta/Desktop/img"
 i =0
-
-cv2.namedWindow("Tracking")
-cv2.createTrackbar("LH", "Tracking", 0, 255, nothing)
-cv2.createTrackbar("LS", "Tracking", 0, 255, nothing)
-cv2.createTrackbar("LV", "Tracking", 0, 255, nothing)
-cv2.createTrackbar("UH", "Tracking", 255, 255, nothing)
-cv2.createTrackbar("US", "Tracking", 255, 255, nothing)
-cv2.createTrackbar("UV", "Tracking", 255, 255, nothing)
-
+def tracking():
+    cv2.namedWindow("Tracking")
+    cv2.createTrackbar("LH", "Tracking", 0, 255, nothing)
+    cv2.createTrackbar("LS", "Tracking", 0, 255, nothing)
+    cv2.createTrackbar("LV", "Tracking", 0, 255, nothing)
+    cv2.createTrackbar("UH", "Tracking", 255, 255, nothing)
+    cv2.createTrackbar("US", "Tracking", 255, 255, nothing)
+    cv2.createTrackbar("UV", "Tracking", 255, 255, nothing)
+tracking()
+print("Press q to stop")
 while True:
     #frame = cv2.imread('smarties.png')
     _, frame = cap.read()
@@ -53,6 +54,7 @@ while True:
 
     key = cv2.waitKey(1)
     if key == 27:
+        print("Breaking...")
         break
 
 cap.release()
